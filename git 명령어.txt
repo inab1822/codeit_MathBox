@@ -1,0 +1,21 @@
+1. git 시작하기
+
+ - git init : 현재 작업 중인 디렉토리를 working directory로 만든다. 특징으로는 .git라는 디렉토리가
+	      숨김으로 생성된다.
+ - git config user.name "codeit" : 현재 사용자의 아이디를 codeit으로 설정
+ - git config user.email "codeit@codeit.kr" : 현재 사용자의 이메일 주소를 codeit@codeit.kr로 설정
+ 
+ - git add [파일이름] : working directory안에 있는 수정사항이 있는 특정 파일을 staging area에 올린다.
+ - git add [디렉토리명] : working directory안에 있는 수정사항이 있는 특정 폴더와
+                                          아래의 모든 파일들을 staging area에 올린다.
+ - git add . : working directory안에 있는 모든 수정사항이 있는 파일을 staging area에 올린다.
+ - git reset [파일이름] : staging area에 올렸던 파일을 다시 내린다.
+ - git status : Git이 현재 인식하고 있는 프로젝트 관련 내용을 출력한다.
+ 
+ - git commit -m "커밋메시지" : 현제 git add 되어 staging area에 있는 것들을 커밋으로 넘긴다.
+ - git help [커맨드 이름] : 사용법이 궁금한 Git 커맨드의 공식 매뉴얼 출력. 
+ - git push -u origin main : 내 컴퓨터에 있는 즉, 로컬 레포지토리의 내용을 맨 처음
+                                                리모트 레포지토리(예.github)에 올릴 때 사용 한다.
+ - git push : 처음이 올리는 경우가 아닐 때 로컬 레포지토리의 내용을 리모트 레포지토리에 보낸다.
+ - git pull : 리모트 레포지토리의 내용을 로컬 레포지토리로 가져온다.
+ - git clone [프로젝트 Github 상 주소] : Github에 있는 프로젝트를 내 컴퓨터로 가져온다.
