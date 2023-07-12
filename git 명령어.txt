@@ -47,7 +47,19 @@
  - git tag : 현재 태그를 모두 출력
  - git tag -m [지울 태그명] : 해당 태그명을 삭제
 
+
+
 3. git branch 다루기
+
+
+ - git branch [새 브랜치 이름] : 새로운 브랜치를 생성
+ - git branch -d [기존 브랜치 이름] : 있던 브랜치 삭제
+ - git checkout -b [새 브랜치 이름] : 새로운 브랜치를 생성하고 그 브랜치로 바로 이동
+ - git checkout [기존 브랜치 이름] : 그 브랜치로 이동
+ - git merge [기존 브랜치 이름] : 현재 브랜치에 다른 브랜치를 머지(병합)
+ - git merge --abort : 머지를 하다가 conflict가 발생했을 때, 일단은 머지 작업을 취소하고 이전 상태로 돌아감
+
+
 
  - 맨 처음 로컬 레포지토리를 github 같은 리모트 레포지토리로 push 할 때
      git remote add origin https://github.com/inab1822/Math_Box.git 
@@ -71,5 +83,16 @@
      "git push origin main:main" 을 쳐야 하는데
      여기서 origin은 리모트 레포지토리를 말하고, 처음 나오는 main은 로컬 레포지토리의 main 브랜치
      나중에 나오는 main은 리모트 레포지토리의 main브랜치 이다.
-     꽤 귀찮기 때문에 처음 remote 정할 때 "-u" 옵션을 설정해 주자. 
+     꽤 귀찮기 때문에 처음 remote 정할 때 "-u" 옵션을 설정해 주자.
+
+ - git reset은 HEAD와 HEAD가 보고있는 브랜치가 같이 이동하지만,
+     git checkout은 브랜치를 보고 있는 HEAD만 이동된다.
+     즉, 현재 우리가 보고있는 커밋은 HEAD가 main(브랜치이름)을 통해 간접적으로 보고있는 상황이다.
+
+
+ - git checkout [커밋 아이디] : 기존에 [브랜치]를 썻을 때 HEAD가 다른 브랜치를 가리켰다면,
+                                                [커밋 아이디]를 쓰면 HEAD만 이전 커밋을 가리키게 된다.
+                                                이렇게 하는 이유는 이전 커밋에서 다른 브랜치를 만들고 싶을 때 쓴다.
+                                                즉 git checkout 커맨드는 HEAD가 커밋을 직접 가리킬 수도 브랜치를
+                                                직접 가리킬 수도 있다. 
 
