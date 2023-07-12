@@ -46,3 +46,30 @@
  - git tag [태그이름] [커밋 아이디] : 특정 커밋에 태그를 붙임
  - git tag : 현재 태그를 모두 출력
  - git tag -m [지울 태그명] : 해당 태그명을 삭제
+
+3. git branch 다루기
+
+ - 맨 처음 로컬 레포지토리를 github 같은 리모트 레포지토리로 push 할 때
+     git remote add origin https://github.com/inab1822/Math_Box.git 
+   이라는 명령어를 쳤다.
+     맨 처음 리모트 레포지토리로 push 하기 위해서 새 리모트 레포지토리를 등록 하겠다는 뜻이다.
+     "https://github.com/inab1822/Math_Box.git"라는 새 리모트 레포지토리를 
+       origin이라는 이름으로 add(추가)한다. 라는 뜻이다. 굳이 origin이 아닌 임의의 이름도 되긴하지만
+     git에서는 origin이라는 이름이 관례화 되어 있기 때문에 그냥 쓰자.
+ 
+ - 그 다음 쳤던 
+      git push -u origin main
+   는 현재 로컬 레포지토리에 있는 main 브랜치의 내용 및 관련된 모든 커밋들을
+     origin이라는 리모트 레포지토리로 보낸다는 뜻.
+     이 때 origin이라는 리모트 레포지토리에 main이라는 브랜치가 없으면 main 브랜치를 자동 생성 후 푸시.
+     그리고 옵션인 "-u"는 --set-upstream이라는 옵션의 약자로써
+     로컬 레포지토리 main 브랜치가 origin에 있는 main 브랜치를 추적하는 걸로 설정.
+     이렇게 추적하는걸로 설정해 놓으면 추후 다시 push할때
+     "git push" 만 해줘도 자동으로 추적 중인 리모트 레포지토리 main 브랜치를 대상으로 push됨
+     "git pull" 도 마찬가지.
+     만약 "-u"를 해주지 않으면 추후 psuh 할 때,
+     "git push origin main:main" 을 쳐야 하는데
+     여기서 origin은 리모트 레포지토리를 말하고, 처음 나오는 main은 로컬 레포지토리의 main 브랜치
+     나중에 나오는 main은 리모트 레포지토리의 main브랜치 이다.
+     꽤 귀찮기 때문에 처음 remote 정할 때 "-u" 옵션을 설정해 주자. 
+
